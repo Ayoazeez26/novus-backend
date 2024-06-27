@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "details",
+  "info": {
+    "singularName": "detail",
+    "pluralName": "details",
+    "displayName": "detail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "band": {
+      "type": "string"
+    },
+    "age": {
+      "type": "string"
+    },
+    "endDate": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "reportsTo": {
+      "type": "string"
+    },
+    "supervises": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "team": {
+      "type": "string"
+    },
+    "qualification": {
+      "type": "string"
+    },
+    "experience": {
+      "type": "string"
+    },
+    "img": {
+      "type": "string"
+    }
+  }
+}

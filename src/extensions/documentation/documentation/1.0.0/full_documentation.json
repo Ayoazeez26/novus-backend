@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-07-02T17:22:01.317Z"
+    "x-generation-date": "2024-07-02T18:48:25.348Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3024,6 +3024,9 @@
                         "currentlyWorkingHere": {
                           "type": "boolean"
                         },
+                        "dob": {
+                          "type": "string"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -3168,7 +3171,8 @@
               "yearOfGraduation",
               "coverLetterFile",
               "resumeFile",
-              "email"
+              "email",
+              "dob"
             ],
             "type": "object",
             "properties": {
@@ -3290,6 +3294,9 @@
               },
               "currentlyWorkingHere": {
                 "type": "boolean"
+              },
+              "dob": {
+                "type": "string"
               }
             }
           }
@@ -3357,7 +3364,8 @@
           "yearOfGraduation",
           "coverLetterFile",
           "resumeFile",
-          "email"
+          "email",
+          "dob"
         ],
         "properties": {
           "fullName": {
@@ -4764,6 +4772,9 @@
                                     "currentlyWorkingHere": {
                                       "type": "boolean"
                                     },
+                                    "dob": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -5443,6 +5454,9 @@
           },
           "currentlyWorkingHere": {
             "type": "boolean"
+          },
+          "dob": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",

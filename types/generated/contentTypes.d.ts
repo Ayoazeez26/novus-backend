@@ -951,7 +951,7 @@ export interface ApiJobApplicationJobApplication extends Schema.CollectionType {
     fieldOfStudy: Attribute.String;
     degreeObtained: Attribute.String & Attribute.Required;
     yearOfGraduation: Attribute.String & Attribute.Required;
-    experience: Attribute.Component<'experience.work-experience'>;
+    experience: Attribute.Component<'experience.work-experience', true>;
     job_id: Attribute.Relation<
       'api::job-application.job-application',
       'manyToOne',

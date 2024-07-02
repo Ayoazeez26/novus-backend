@@ -1,0 +1,144 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Account Officer",
+    "version": "unknown"
+  },
+  "servers": [
+    {
+      "url": "https://staging.mybankone.com/BankOneWebAPI/api/AccountOfficer"
+    }
+  ],
+  "components": {
+    "securitySchemes": {}
+  },
+  "security": [
+    {}
+  ],
+  "paths": {
+    "/Get/undefined": {
+      "get": {
+        "summary": "Get Account Officers",
+        "description": "Returns all the account officers for an institution",
+        "operationId": "get-account-officers",
+        "parameters": [
+          {
+            "name": "authToken",
+            "in": "query",
+            "description": "Authorization token for this request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mfbCode",
+            "in": "query",
+            "description": "mfb code",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/GetByStaffCode/undefined": {
+      "get": {
+        "summary": "Get Account Officer by StaffCode",
+        "description": "Returns an account officer details",
+        "operationId": "get-account-officer-bystaffcode",
+        "parameters": [
+          {
+            "name": "authToken",
+            "in": "query",
+            "description": "Authorization token for this request",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "staffCode",
+            "in": "query",
+            "description": "account officer staff code on Bankone",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "x-readme": {
+    "headers": []
+  },
+  "x-readme-fauxas": true
+}

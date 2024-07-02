@@ -788,6 +788,38 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAccountAccount extends Schema.CollectionType {
+  collectionName: 'accounts';
+  info: {
+    singularName: 'account';
+    pluralName: 'accounts';
+    displayName: 'account';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    TransactionTrackingRef: Attribute.String;
+    email: Attribute.Email & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::account.account',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::account.account',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDetailDetail extends Schema.SingleType {
   collectionName: 'details';
   info: {
@@ -844,6 +876,11 @@ export interface ApiJobJob extends Schema.CollectionType {
     qualification: Attribute.String;
     experience: Attribute.String;
     img: Attribute.String;
+    job_applications: Attribute.Relation<
+      'api::job.job',
+      'oneToMany',
+      'api::job-application.job-application'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -860,27 +897,41 @@ export interface ApiJobApplicationJobApplication extends Schema.CollectionType {
     singularName: 'job-application';
     pluralName: 'job-applications';
     displayName: 'job application';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    fullName: Attribute.String;
-    email: Attribute.String;
-    phoneNumber: Attribute.String;
+    fullName: Attribute.String & Attribute.Required;
+    phoneNumber: Attribute.String & Attribute.Required;
     altPhoneNumber: Attribute.String;
-    gender: Attribute.String;
-    maritalStatus: Attribute.String;
-    address: Attribute.String;
-    nationality: Attribute.String;
-    stateOfResidence: Attribute.String;
-    lga: Attribute.String;
-    educationLevel: Attribute.String;
+    gender: Attribute.String & Attribute.Required;
+    maritalStatus: Attribute.String & Attribute.Required;
+    address: Attribute.String & Attribute.Required;
+    nationality: Attribute.String & Attribute.Required;
+    stateOfResidence: Attribute.String & Attribute.Required;
+    lga: Attribute.String & Attribute.Required;
+    educationLevel: Attribute.String & Attribute.Required;
     institution: Attribute.String;
     fieldOfStudy: Attribute.String;
-    degreeObtained: Attribute.String;
-    yearOfGraduation: Attribute.String;
-    employer: Attribute.Component<'work-experience.work-experience', true>;
+    degreeObtained: Attribute.String & Attribute.Required;
+    yearOfGraduation: Attribute.String & Attribute.Required;
+    experience: Attribute.Component<'experience.work-experience'>;
+    job_id: Attribute.Relation<
+      'api::job-application.job-application',
+      'manyToOne',
+      'api::job.job'
+    >;
+    referee: Attribute.Component<'referee.referee', true>;
+    coverLetterFile: Attribute.Media<'files'> & Attribute.Required;
+    resumeFile: Attribute.Media<'files'> & Attribute.Required;
+    certificationFile: Attribute.Media<'images' | 'files'>;
+    relevantDocument: Attribute.Media<'images' | 'files'>;
+    relevantSkills: Attribute.Text;
+    email: Attribute.Email & Attribute.Required;
+    proffessionalCertName: Attribute.String;
+    currentlyWorkingHere: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -917,6 +968,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::account.account': ApiAccountAccount;
       'api::detail.detail': ApiDetailDetail;
       'api::job.job': ApiJobJob;
       'api::job-application.job-application': ApiJobApplicationJobApplication;

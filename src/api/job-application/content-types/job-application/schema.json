@@ -68,7 +68,7 @@
     },
     "experience": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "experience.work-experience"
     },
     "job_id": {

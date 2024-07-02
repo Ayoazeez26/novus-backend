@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-07-02T18:48:25.348Z"
+    "x-generation-date": "2024-07-02T21:46:07.229Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2150,22 +2150,25 @@
                           "type": "string"
                         },
                         "experience": {
-                          "type": "object",
-                          "properties": {
-                            "id": {
-                              "type": "number"
-                            },
-                            "jobTitle": {
-                              "type": "string"
-                            },
-                            "employmentStartDate": {
-                              "type": "string"
-                            },
-                            "employmentEndDate": {
-                              "type": "string"
-                            },
-                            "responsibilitiesAndAchievements": {
-                              "type": "string"
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "jobTitle": {
+                                "type": "string"
+                              },
+                              "employmentStartDate": {
+                                "type": "string"
+                              },
+                              "employmentEndDate": {
+                                "type": "string"
+                              },
+                              "responsibilitiesAndAchievements": {
+                                "type": "string"
+                              }
                             }
                           }
                         },
@@ -3219,7 +3222,10 @@
                 "type": "string"
               },
               "experience": {
-                "$ref": "#/components/schemas/ExperienceWorkExperienceComponent"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExperienceWorkExperienceComponent"
+                }
               },
               "job_id": {
                 "oneOf": [
@@ -3411,7 +3417,10 @@
             "type": "string"
           },
           "experience": {
-            "$ref": "#/components/schemas/ExperienceWorkExperienceComponent"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExperienceWorkExperienceComponent"
+            }
           },
           "job_id": {
             "type": "object",
@@ -4143,22 +4152,25 @@
                                       "type": "string"
                                     },
                                     "experience": {
-                                      "type": "object",
-                                      "properties": {
-                                        "id": {
-                                          "type": "number"
-                                        },
-                                        "jobTitle": {
-                                          "type": "string"
-                                        },
-                                        "employmentStartDate": {
-                                          "type": "string"
-                                        },
-                                        "employmentEndDate": {
-                                          "type": "string"
-                                        },
-                                        "responsibilitiesAndAchievements": {
-                                          "type": "string"
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "id": {
+                                            "type": "number"
+                                          },
+                                          "jobTitle": {
+                                            "type": "string"
+                                          },
+                                          "employmentStartDate": {
+                                            "type": "string"
+                                          },
+                                          "employmentEndDate": {
+                                            "type": "string"
+                                          },
+                                          "responsibilitiesAndAchievements": {
+                                            "type": "string"
+                                          }
                                         }
                                       }
                                     },

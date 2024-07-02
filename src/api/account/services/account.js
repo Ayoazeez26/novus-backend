@@ -61,7 +61,6 @@ module.exports = createCoreService("api::account.account", ({ strapi }) => ({
       TransactionPermission: ctx.data.TransactionPermission,
       AccountTier: ctx.data.AccountTier,
     };
-
     // Make the POST request
     const response = await axios.post(url, payload);
 

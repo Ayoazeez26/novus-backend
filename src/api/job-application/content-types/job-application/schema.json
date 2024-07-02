@@ -4,7 +4,8 @@
   "info": {
     "singularName": "job-application",
     "pluralName": "job-applications",
-    "displayName": "job application"
+    "displayName": "job application",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,37 +13,44 @@
   "pluginOptions": {},
   "attributes": {
     "fullName": {
-      "type": "string"
-    },
-    "email": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "phoneNumber": {
-      "type": "string"
+      "type": "string",
+      "unique": false,
+      "required": true
     },
     "altPhoneNumber": {
       "type": "string"
     },
     "gender": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "maritalStatus": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "address": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "nationality": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "stateOfResidence": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "lga": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "educationLevel": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "institution": {
       "type": "string"
@@ -51,16 +59,75 @@
       "type": "string"
     },
     "degreeObtained": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "yearOfGraduation": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "employer": {
-      "displayName": "work experience",
+    "experience": {
+      "type": "component",
+      "repeatable": false,
+      "component": "experience.work-experience"
+    },
+    "job_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::job.job",
+      "inversedBy": "job_applications"
+    },
+    "referee": {
       "type": "component",
       "repeatable": true,
-      "component": "work-experience.work-experience"
+      "component": "referee.referee"
+    },
+    "coverLetterFile": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "resumeFile": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "certificationFile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "relevantDocument": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "relevantSkills": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "proffessionalCertName": {
+      "type": "string"
+    },
+    "currentlyWorkingHere": {
+      "type": "boolean"
     }
   }
 }

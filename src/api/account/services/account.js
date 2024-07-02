@@ -1,53 +1,3 @@
-// "use strict";
-
-// const { createCoreService } = require("@strapi/strapi").factories;
-// const { errors } = require("@strapi/utils");
-// const axios = require("axios");
-// const { ApplicationError } = errors;
-
-// const { v4: uuidv4 } = require("uuid");
-
-// // @ts-ignore
-// module.exports = createCoreService("api::account.account", ({ strapi }) => ({
-//   async create(ctx) {
-//     const productCode = process.env.PRODUCT_CODE;
-//     const accountOfficerCode = process.env.ACCOUNT_OFFICER_CODE;
-//     const bankToken = process.env.ONE_BANK_AUTH_TOKEN;
-//     const bankQuickAccountApi = process.env.BANK_QUICK_ACOUNT_API;
-
-//     // Construct the full URL
-//     const url = `${bankQuickAccountApi}?authToken=${bankToken}`;
-
-//     // Prepare payload
-//     const payload = {
-//       TransactionTrackingRef: uuidv4(),
-//       AccountOpeningTrackingRef: uuidv4(),
-//       ProductCode: productCode,
-//       LastName: ctx.data.LastName,
-//       OtherNames: ctx.data.OtherNames,
-//       PhoneNo: ctx.data.PhoneNo,
-//       Gender: ctx.data.Gender,
-//       PlaceOfBirth: ctx.data.PlaceOfBirth,
-//       DateOfBirth: ctx.data.DateOfBirth,
-//       Address: ctx.data.Address,
-//       AccountOfficerCode: accountOfficerCode,
-//       Email: ctx.data.Email,
-//       NotificationPreference: ctx.data.NotificationPreference,
-//       TransactionPermission: ctx.data.TransactionPermission,
-//       AccountTier: ctx.data.AccountTier,
-//     };
-
-//     // Make the POST request
-//     const response = await axios.post(url, payload);
-
-//     if (!response.data.IsSuccessful) {
-//       throw new ApplicationError(response.data.Message.CreationMessage);
-//     }
-
-//     return { isSuccess: true };
-//   },
-// }));
-
 "use strict";
 
 const { createCoreService } = require("@strapi/strapi").factories;
@@ -63,8 +13,6 @@ module.exports = createCoreService("api::account.account", ({ strapi }) => ({
     const accountOfficerCode = process.env.ACCOUNT_OFFICER_CODE;
     const bankToken = process.env.ONE_BANK_AUTH_TOKEN;
     const bankQuickAccountApi = process.env.BANK_QUICK_ACOUNT_API;
-
-    const job = await strapi.entityService.findOne("api::job.job", jobId);
 
     // Check if email already exists in the database
     const existingAccount = await strapi.entityService.findMany(

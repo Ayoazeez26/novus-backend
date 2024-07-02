@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "apis": [
+    {
+      "identifier": "appzone-docs",
+      "source": "@appzone-docs/v2#12i6tqhlki8xtpz",
+      "integrity": "sha512-NgJ4vmv6SD5zcugy+AD0GnzFO06b2wXy76bgF2wRUNb+FLfoTBJW6PabH8sicxVW2+hGhy7e8OsK39Xsrue1Fw==",
+      "installerVersion": "6.1.1"
+    }
+  ]
+}

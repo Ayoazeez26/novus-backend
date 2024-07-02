@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_referee_referees",
+  "info": {
+    "displayName": "Referee",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "relationship": {
+      "type": "string",
+      "required": false
+    },
+    "phoneNo": {
+      "type": "string",
+      "required": false
+    },
+    "email": {
+      "type": "email",
+      "required": false
+    }
+  }
+}

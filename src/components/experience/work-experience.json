@@ -1,21 +1,26 @@
 {
   "collectionName": "components_work_experience_work_experiences",
   "info": {
-    "displayName": "work experience"
+    "displayName": "experience",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "jobTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "employmentStartDate": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "employmentEndDate": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "responsibilitiesAndAchievements": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }

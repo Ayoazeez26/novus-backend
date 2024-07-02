@@ -966,6 +966,7 @@ export interface ApiJobApplicationJobApplication extends Schema.CollectionType {
     email: Attribute.Email & Attribute.Required;
     proffessionalCertName: Attribute.String;
     currentlyWorkingHere: Attribute.Boolean;
+    dob: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
